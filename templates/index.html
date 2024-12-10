@@ -5,7 +5,8 @@
     <title>Todo List</title>
   </head>
   <body>
-    <h1>Todo List</h1>
+    <h2>Todo List:</h2>
+    {{ css|safe }}
     <ul>
       {% for todo in todos %}
         <li>
