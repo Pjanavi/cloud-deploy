@@ -1,12 +1,76 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 
 todos = []
 
 @app.route('/')
 def index():
-    return render_template('index.html', todos=todos)
+   
+    css = """
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        .todo-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap:
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    """
+    return render_template('index.html', todos=todos, css=css)
 
 @app.route('/add', methods=['POST'])
 def add():
@@ -34,4 +98,4 @@ def delete(index):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=8080)
+    app.run(host="0.0.0.0", port=8080)
