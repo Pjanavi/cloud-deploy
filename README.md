@@ -75,6 +75,11 @@ INSTRUCTIONS FOR DEPLOYING THE GITHUB REPO ON A PUBLIC SERVER, IN THIS CASE IT'S
         --> Now the project will be succesfully deployed and a public url will be generated
         
         --> IN THIS PROJECT THE FINAL PUBLIC URL GENERATED IS : "https://cloud-deployy-1077873054506.asia-south1.run.app/"
+
+
+PROJECT OUTPUT 
+-
+https://cloud-deployy-1077873054506.asia-south1.run.app/
         
       
 
